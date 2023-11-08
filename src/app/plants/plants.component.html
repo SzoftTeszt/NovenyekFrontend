@@ -12,7 +12,7 @@
             <small class="text-muted">{{ar(noveny.ar, db.value)}} Ft</small>
             <div class="input-group my-3">
                 <input #db type="number" class="form-control" value="1" min="1">
-                <button class="btn btn-outline-secondary" type="button">
+                <button (click)="kosarba(noveny.id,db.value)" class="btn btn-outline-secondary" type="button">
                     Megrendel
                 </button>
               </div>

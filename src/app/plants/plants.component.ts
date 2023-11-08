@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseService } from '../base.service';
+import { KosarService } from '../kosar.service';
 
 @Component({
   selector: 'app-plants',
@@ -10,7 +11,9 @@ export class PlantsComponent {
   
   novenyek:any
 
-  constructor(private base:BaseService){
+  constructor(
+      private base:BaseService, 
+      private kosar:KosarService){
     this.base.getPlants().subscribe(
       (adatok:any)=> this.novenyek=adatok
     )
@@ -19,5 +22,9 @@ export class PlantsComponent {
 
   ar(ar:any,db:any){
     return ar*db
+  }
+  kosarba(id:any,db:any){
+    this.kosar.addTetel(id,db)
+    // console.log(id,"; ",db)
   }
 }
