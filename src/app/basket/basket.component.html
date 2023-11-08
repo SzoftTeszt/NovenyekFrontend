@@ -1,1 +1,25 @@
-<p>basket works!</p>
+<!-- {{tetelek|json}} -->
+<h1>Kosár</h1>
+
+<ng-container *ngIf="tetelek.length>0; else empty">
+    <div *ngFor="let tetel of tetelek" class="card">    
+        <div class="card-body">
+        <h5 class="card-title">{{keresNoveny(tetel.id).megnevezes}}</h5>
+        <p class="card-text">
+            {{keresNoveny(tetel.id).ar}} Ft x 
+            {{tetel.db}} =
+            {{tetelOsszes(tetel)}} Ft
+        </p>    
+        </div>
+        <button (click)="torol(tetel)" type="button" class="btn btn-danger btn-sm">Törlés</button>
+    </div>
+
+    <h2>Fizetendő:</h2>
+    <div>{{osszesen()}} Ft</div>
+    <button class="btn btn-outline-secondary" type="button">
+        Megrendelés elküldése
+    </button>
+</ng-container>
+<ng-template #empty>
+    <h2>Kosár üres</h2>
+</ng-template>

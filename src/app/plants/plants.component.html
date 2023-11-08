@@ -9,7 +9,9 @@
             <p class="card-text">{{noveny.leiras}}</p>
           </div>
           <div class="card-footer">
-            <small class="text-muted">{{ar(noveny.ar, db.value)}} Ft</small>
+            <small class="text-muted">
+                <!-- {{ar(noveny.ar, db.value)}}  -->
+              {{noveny.ar}} Ft</small>
             <div class="input-group my-3">
                 <input #db type="number" class="form-control" value="1" min="1">
                 <button (click)="kosarba(noveny.id,db.value)" class="btn btn-outline-secondary" type="button">
