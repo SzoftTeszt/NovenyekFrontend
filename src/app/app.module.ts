@@ -5,16 +5,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlantsComponent } from './plants/plants.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BasketComponent } from './basket/basket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlantsComponent
+    PlantsComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

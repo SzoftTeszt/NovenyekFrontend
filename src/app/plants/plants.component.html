@@ -1,1 +1,22 @@
-{{nyovenyek|json}}
+<!-- {{novenyek|json}} -->
+
+<div class="row g-3">
+    <div *ngFor="let noveny of novenyek" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img [src]="noveny.kepUrl" class="card-img-top" [alt]="noveny.megnevezes">
+          <div class="card-body">
+            <h5 class="card-title"> {{noveny.megnevezes}} </h5>
+            <p class="card-text">{{noveny.leiras}}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{ar(noveny.ar, db.value)}} Ft</small>
+            <div class="input-group my-3">
+                <input #db type="number" class="form-control" value="1" min="1">
+                <button class="btn btn-outline-secondary" type="button">
+                    Megrendel
+                </button>
+              </div>
+          </div>
+        </div>
+      </div>
+</div>

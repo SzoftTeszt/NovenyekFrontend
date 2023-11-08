@@ -8,11 +8,16 @@ import { BaseService } from '../base.service';
 })
 export class PlantsComponent {
   
-  nyovenyek:any
+  novenyek:any
 
   constructor(private base:BaseService){
     this.base.getPlants().subscribe(
-      (adatok:any)=> this.nyovenyek=adatok
+      (adatok:any)=> this.novenyek=adatok
     )
+  }
+
+
+  ar(ar:any,db:any){
+    return ar*db
   }
 }
