@@ -16,7 +16,7 @@ oszlopok=[
   {key:"leiras", text:"Leírás", type:"textarea"},
   {key:"ar", text:"Ár", type:"number"}
 ]
-
+ujNoveny:any={}
 
 constructor(private base:BaseService){
   this.base.getPlants().subscribe(
@@ -24,4 +24,25 @@ constructor(private base:BaseService){
   )
 
 }  
+
+updatePlant(noveny:any){
+  console.log("update", noveny)
+  this.base.updatePlant(noveny).subscribe(
+    ()=>console.log("Sikeres módosítás")
+  )
+}
+
+deletePlant(noveny:any){
+  this.base.deletePlant(noveny).subscribe(
+    ()=>this.base.getPlants().subscribe(
+      (a)=>this.novenyek=a
+    )
+  )
+}
+addPlant(){
+  this.base.addPlant(this.ujNoveny).subscribe(
+    ()=>{this.ujNoveny={}}
+  )
+}
+
 }

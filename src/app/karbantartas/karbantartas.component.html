@@ -9,6 +9,27 @@
         </div>
     </div>
 
+    <div  class="row my-2 ">
+        <div *ngFor="let oszlop of oszlopok" class="col">
+           <ng-container [ngSwitch]="oszlop.type">
+                <div *ngSwitchCase="'plain'">  {{ujNoveny[oszlop.key]}}</div>
+
+                <div *ngSwitchCase="'textarea'" class="form-floating mb-3">
+                    <textarea [(ngModel)]="ujNoveny[oszlop.key]" class="form-control"></textarea>
+                </div>
+
+                <div *ngSwitchDefault class="form-floating mb-3 ">
+                    <input [(ngModel)]="ujNoveny[oszlop.key]" [type]="oszlop.type" class="form-control">
+                </div>
+            </ng-container>
+
+        </div>
+        <div class="col mt-3">
+            <button (click)="addPlant()" type="button" class="btn btn-primary btn-sm">Hozzáad</button>
+          
+        </div>
+    </div>
+
     <div *ngFor="let noveny of novenyek" class="row my-2 ">
         <div *ngFor="let oszlop of oszlopok" class="col">
            <ng-container [ngSwitch]="oszlop.type">
@@ -25,8 +46,8 @@
 
         </div>
         <div class="col mt-3">
-            <button type="button" class="btn btn-primary btn-sm">Szerkeszt</button>
-            <button type="button" class="btn btn-primary ms-3 btn-sm">Töröl</button>
+            <button (click)="updatePlant(noveny)" type="button" class="btn btn-primary btn-sm">Szerkeszt</button>
+            <button (click)="deletePlant(noveny)" type="button" class="btn btn-primary ms-3 btn-sm">Töröl</button>
         </div>
     </div>
 

@@ -15,6 +15,21 @@ export class BaseService {
     return this.http.get(this.url)
   }
 
+  addPlant(body:any){
+    return this.http.post(this.url,body)
+  }
+
+  updatePlant(body:any){
+    return this.http.put(this.url+body.id,body)
+  }
+
+  deletePlant(body:any){
+    return this.http.delete(this.url+body.id)
+  }
+
+
+
+
   addOrder(body:any){
     return this.http.post(this.murl,body)
   }
