@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PlantsComponent } from './plants/plants.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BasketComponent } from './basket/basket.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BasketComponent } from './basket/basket.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

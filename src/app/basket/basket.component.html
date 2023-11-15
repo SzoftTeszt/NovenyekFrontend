@@ -5,11 +5,11 @@
     <div *ngFor="let tetel of tetelek" class="card">    
         <div class="card-body">
         <h5 class="card-title">{{keresNoveny(tetel.id).megnevezes}}</h5>
-        <p class="card-text">
-            {{keresNoveny(tetel.id).ar}} Ft x 
-            {{tetel.db}} =
-            {{tetelOsszes(tetel)}} Ft
-        </p>    
+            <div class="input-group">
+                <span class="input-group-text"> {{keresNoveny(tetel.id).ar}}Ft x</span>
+                <input [(ngModel)]="tetel.db" type="number" class="form-control">
+                <span class="input-group-text">db = {{tetelOsszes(tetel)}} Ft </span>
+              </div>
         </div>
         <button (click)="torol(tetel)" type="button" class="btn btn-danger btn-sm">Törlés</button>
     </div>
