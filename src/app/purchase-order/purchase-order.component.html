@@ -1,0 +1,27 @@
+<div class="card">   
+    <div class="card-body">
+      <h5 class="card-title">Megrendelés</h5>
+      
+      <div class="mb-3">
+        <label for="name" class="form-label">Név:</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+
+      <div class="mb-3">
+        <label for="address" class="form-label">Cím:</label>
+        <input type="text" class="form-control" id="address">
+      </div>
+      
+      <div class="mb-3">
+        <label for="message" class="form-label">Megjegyzés a futárnak:</label>
+        <textarea class="form-control" id="message" rows="3"></textarea>
+      </div>
+
+      <div class="form-check form-switch">
+        <input [(ngModel)]="aszf" class="form-check-input" type="checkbox" id="aszf" checked>
+        <label class="form-check-label" for="flexSwitchCheckChecked">ÁSZF</label>
+      </div>
+
+      <button [disabled]="!aszf" type="button" class="btn btn-primary">Megrendelés elküldése</button>
+    </div>
+  </div>

@@ -8,12 +8,16 @@ import { PlantsComponent } from './plants/plants.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BasketComponent } from './basket/basket.component';
 import { FormsModule } from '@angular/forms';
+import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlantsComponent,
-    BasketComponent
+    BasketComponent,
+    PurchaseOrderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
