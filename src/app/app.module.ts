@@ -10,6 +10,9 @@ import { BasketComponent } from './basket/basket.component';
 import { FormsModule } from '@angular/forms';
 import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
 import { HomeComponent } from './home/home.component';
+import { SearchPipe } from './search.pipe';
+import { KarbantartasComponent } from './karbantartas/karbantartas.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { HomeComponent } from './home/home.component';
     PlantsComponent,
     BasketComponent,
     PurchaseOrderComponent,
-    HomeComponent
+    HomeComponent,
+    SearchPipe,
+    KarbantartasComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

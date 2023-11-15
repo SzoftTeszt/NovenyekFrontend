@@ -10,6 +10,7 @@ import { KosarService } from '../kosar.service';
 export class PlantsComponent {
   
   novenyek:any
+  keresendo:any=""
 
   constructor(
       private base:BaseService, 

@@ -1,7 +1,13 @@
 <!-- {{novenyek|json}} -->
 
+<div class="mb-3">
+  <label for="name" class="form-label">Keresés(név):</label>
+  <input [(ngModel)]="keresendo" type="text" class="form-control" id="name">
+</div>
+
+
 <div class="row g-3">
-    <div *ngFor="let noveny of novenyek" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+    <div *ngFor="let noveny of novenyek|search:keresendo" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
         <div class="card h-100">
           <img [src]="noveny.kepUrl" class="card-img-top" [alt]="noveny.megnevezes">
           <div class="card-body">

@@ -4,17 +4,17 @@
       
       <div class="mb-3">
         <label for="name" class="form-label">Név:</label>
-        <input type="text" class="form-control" id="name">
+        <input [(ngModel)]="nev" type="text" class="form-control" id="name">
       </div>
 
       <div class="mb-3">
         <label for="address" class="form-label">Cím:</label>
-        <input type="text" class="form-control" id="address">
+        <input  [(ngModel)]="cim" type="text" class="form-control" id="address">
       </div>
       
       <div class="mb-3">
         <label for="message" class="form-label">Megjegyzés a futárnak:</label>
-        <textarea class="form-control" id="message" rows="3"></textarea>
+        <textarea  [(ngModel)]="uzenet" class="form-control" id="message" rows="3"></textarea>
       </div>
 
       <div class="form-check form-switch">
@@ -22,6 +22,6 @@
         <label class="form-check-label" for="flexSwitchCheckChecked">ÁSZF</label>
       </div>
 
-      <button [disabled]="!aszf" type="button" class="btn btn-primary">Megrendelés elküldése</button>
+      <button (click)="addOrder()" [disabled]="!aszf" type="button" class="btn btn-primary">Megrendelés elküldése</button>
     </div>
   </div>
