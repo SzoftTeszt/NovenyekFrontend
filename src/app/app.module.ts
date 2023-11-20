@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { SearchPipe } from './search.pipe';
 import { KarbantartasComponent } from './karbantartas/karbantartas.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     SearchPipe,
     KarbantartasComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

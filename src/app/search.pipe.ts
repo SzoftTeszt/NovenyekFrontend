@@ -6,8 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SearchPipe implements PipeTransform {
 
   transform(novenyek:any, nev:any): any {
+    // console.log("Nev", nev)
     if (!novenyek) return novenyek
-    if (!nev || nev.length==0) {
+    if (!nev) {
       // console.log("vissza üres")
       return novenyek}
     
@@ -16,7 +17,7 @@ export class SearchPipe implements PipeTransform {
       (sor:any)=> {
         // console.log("sor",sor.megnevezes)
         // console.log("nev",nev)
-        return sor.megnevezes.toLowerCase().includes(nev.toLowerCase())
+        return String(sor.megnevezes).toLowerCase().includes(String(nev).toLowerCase())
       }
     )
   }

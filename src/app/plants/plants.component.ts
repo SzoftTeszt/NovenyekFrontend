@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseService } from '../base.service';
 import { KosarService } from '../kosar.service';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-plants',
@@ -14,9 +15,15 @@ export class PlantsComponent {
 
   constructor(
       private base:BaseService, 
-      private kosar:KosarService){
+      private kosar:KosarService,
+      private search:SearchService){
+
     this.base.getPlants().subscribe(
       (adatok:any)=> this.novenyek=adatok
+    )
+
+    this.search.getSearch().subscribe(
+      (res:any)=>this.keresendo=res
     )
   }
 

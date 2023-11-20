@@ -1,3 +1,4 @@
+{{message|json}}
 <ng-container *ngIf="novenyek">
 
     <div class="row my-2 fw-bold">
@@ -5,7 +6,7 @@
             {{oszlop.text}}
         </div>
         <div class="col">
-            Művelet
+            {{message.actionHeader}}
         </div>
     </div>
 
@@ -25,12 +26,12 @@
 
         </div>
         <div class="col mt-3">
-            <button (click)="addPlant()" type="button" class="btn btn-primary btn-sm">Hozzáad</button>
+            <button (click)="addPlant()" type="button" class="btn btn-primary btn-sm">{{message.addBtn}}</button>
           
         </div>
     </div>
 
-    <div *ngFor="let noveny of novenyek" class="row my-2 ">
+    <div *ngFor="let noveny of novenyek|search:keresendo" class="row my-2 ">
         <div *ngFor="let oszlop of oszlopok" class="col">
            <ng-container [ngSwitch]="oszlop.type">
                 <div *ngSwitchCase="'plain'">  {{noveny[oszlop.key]}}</div>
@@ -46,8 +47,8 @@
 
         </div>
         <div class="col mt-3">
-            <button (click)="updatePlant(noveny)" type="button" class="btn btn-primary btn-sm">Szerkeszt</button>
-            <button (click)="deletePlant(noveny)" type="button" class="btn btn-primary ms-3 btn-sm">Töröl</button>
+            <button (click)="updatePlant(noveny)" type="button" class="btn btn-primary btn-sm">{{message.editBtn}}</button>
+            <button (click)="deletePlant(noveny)" type="button" class="btn btn-primary ms-3 btn-sm">{{message.delBtn}}</button>
         </div>
     </div>
 
